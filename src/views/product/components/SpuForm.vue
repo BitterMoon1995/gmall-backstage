@@ -10,7 +10,7 @@
       <el-input v-model="spuForm.description" :rows="5" type="textarea"/>
     </el-form-item>
 
-    <el-form-item label="图片上传" >
+    <el-form-item label="图片上传">
       <el-upload
         :on-success="onUploadSuccess"
         :before-upload="beforeUpload"
@@ -79,14 +79,16 @@
               class="input-new-tag"
               size="small"
               @keyup.enter.native="saveAttrValue(scope.row)"
-              @blur="saveAttrValue(scope.row)" />
+              @blur="saveAttrValue(scope.row)"/>
             <el-button v-else class="button-new-tag" size="small" @click="editAttrValue(scope.row)">+ 添加</el-button>
 
-        </template></el-table-column>
+          </template>
+        </el-table-column>
 
         <el-table-column label="操作" width="200" align="center">
           <template slot-scope="scope">
-            <el-button type="danger" size="mini" icon="el-icon-edit" @click="deleteSaleAttr(scope.row.saleAttr)">删除</el-button>
+            <el-button type="danger" size="mini" icon="el-icon-edit" @click="deleteSaleAttr(scope.row.saleAttr)">删除
+            </el-button>
           </template>
         </el-table-column>
       </el-table>
@@ -108,6 +110,7 @@
 
 <script>
 import spu from '@/api/product/spu'
+
 export default {
 
   props: {
@@ -312,9 +315,10 @@ export default {
 </script>
 
 <style scoped>
-.el-tag + .el-tag {
+  .el-tag + .el-tag {
     margin-left: 10px;
   }
+
   .button-new-tag {
     margin-left: 10px;
     height: 32px;
@@ -322,6 +326,7 @@ export default {
     padding-top: 0;
     padding-bottom: 0;
   }
+
   .input-new-tag {
     width: 90px;
     margin-left: 10px;
